@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.5.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body>
+    <header>
+        <h1 class="text-[50px] font-bold text-center mb-6">Phone Market</h1>
+    </header>
+    <main>
+        <section>
+            <div class=" flex justify-center mt-6">
+                <input id="searchField" type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
+                <button class="btn btn-accent ml-4"  onclick="searchText()">search</button>
+            </div>
+            <div class="flex justify-center">
+                <span class="loading loading-spinner loading-lg hidden" id="spinner"></span>
+            </div>
+            <div id="mainDiv" class="grid grid-cols-3 gap-4 mt-4">
+                
+            </div>
+            <div class="flex justify-center">
+                <button class="btn btn-info hidden " id="showAllBtn" onclick="showAll()">Show All</button>
+            </div>
+
+            <!-- modal -->
+
+<dialog id="my_modal_1" class="modal">
+  <div class="modal-box" id="modalBody">
+    
+    <div id="showDetails">
+
+    </div>
+    <div class="modal-action">
+      <form method="dialog">
+        
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+        </section>
+    </main>
+    
+    <script src="js/script.js"></script>
+</body>
+
+</html>
