@@ -61,10 +61,26 @@ const dataForModal=async (id)=>{
   modal(phoneForDetails);
 }
 const modal=(phoneD)=>{
+  //console.log(phoneD)
   document.getElementById('showDetails').innerHTML=`<h1>Name: ${phoneD.name}</h1>
   <h1>Release Date:${phoneD.releaseDate?phoneD.releaseDate:"not found"}</h1>
-  <h1>storage:${phoneD.mainFeatures.storage}</h1>`
-  console.log(phoneD);
+  <h1>storage:${phoneD.mainFeatures.storage}</h1>
+  <h1>Others:</h1>
+  `
+  
+  const obj=phoneD.others;
+  let count=1;
+  for (const key in obj) {
+    
+      const element = obj[key];
+      console.log(element);
+      const createElement=document.createElement('p');
+      createElement.innerHTML=`<strong>${count}. ${element}</strong>`
+      document.getElementById('showDetails').appendChild(createElement);
+      count++;
+    
+  }
+  //console.log(obj);
   my_modal_1.showModal();
 }
 dataLoad("apple");
